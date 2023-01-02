@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #fff;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    color: #222;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: #eee;
+}
+
+header {
+    margin-top: 0px;
+    background-color: #222;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr 1fr 2fr 1fr;
+    grid-template-areas: '. iam skills projects contacts . change_lang';
+    height: 50px;
+    align-items: center;
+    justify-items: center;
+    font-size: 16px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+header a:hover {
+    color: #fff;
+}
+
+.iam,
+.skills,
+.projects,
+.contacts,
+.change_lang {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iam {
+    grid-area: iam;
+}
+
+.skills {
+    grid-area: skills;
+}
+
+.projects {
+    grid-area: projects;
+}
+
+.contacts {
+    grid-area: contacts;
+}
+
+.change_lang {
+    justify-self: right;
+    margin-right: 50px;
+    grid-area: change_lang;
+    font-size: 14px;
+}
+
+.change_lang img {
+    display: inline-block;
+    width: 27px;
+    margin-left: 5px;
+    top: 2px;
+    position: relative;
+}
+
+.iam:hover,
+.skills:hover,
+.projects:hover,
+.contacts:hover {
+    background-color: #000;
+}
+
+main {
+    display: flex;
+    position: relative;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hello {
+    font-size: 120px;
+    margin: 0;
+    padding: 0;
+    animation: ani 3s forwards;
+}
+
+.name {
+    font-weight: 400;
+    margin: 5px;
+    padding: 0;
+    animation: ani 4s forwards;
+}
+
+@keyframes ani {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+
+#iam {
+    height: 100vh;
+    top: 100vh;
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sec_head_onblack {
+    color: #fff;
+    font-size: 72px;
+    font-weight: 400;
+}
+
+.sec_head_onwhite {
+    color: #222;
+    font-size: 72px;
+    font-weight: 400;
+}
+
+.about {
+    justify-self: center;
+    display: grid;
+    grid-template: repeat(2, minmax(100px, 200px)) / repeat(2, minmax(300px, 421px));
+    grid-template-areas: 'first_cloud second_cloud'
+    'third_cloud fourth_cloud';
+    gap: 10px 10px;
+}
+
+#iam img {
+    width: 100px;
+    z-index: 999;
+    position: absolute;
+    justify-self: center;
+    align-self: center;
+}
+
+#first_cloud,
+#second_cloud,
+#third_cloud,
+#fourth_cloud {
+    border-radius: 30px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#first_cloud {
+    grid-area: first_cloud;
+}
+
+#second_cloud {
+    grid-area: second_cloud;
+}
+
+#third_cloud {
+    grid-area: third_cloud;
+}
+
+#fourth_cloud {
+    grid-area: fourth_cloud;
+}
+
+.cloud_text {
+    font-size: 24px;
+    margin: 40px;
+}
+
+.addmarginleft {
+    margin-left: 60px;
+}
+
+#skills {
+    height: 100vh;
+    top: 200vh;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#skillslist {
+    display: grid;
+    width: 80%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-flow: row dense;
+    grid-gap: 20px;
+    height: 450px;
+    margin-top: 0;
+}
+
+#skillslist div {
+    box-shadow: 0px 0px 72px -18px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0px 0px 72px -18px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 0px 72px -18px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    height: 170px;
+    flex-direction: column;
+}
+
+#skillslist div:hover {
+    cursor: pointer;
+    background-color: #222;
+    color: #fff;
+}
+
+#skillslist div img {
+    margin-top: 16px;
+    width: 100px;
+}
+
+#projects {
+    height: 100vh;
+    top: 300vh;
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#projectslist {
+    display: grid;
+    width: 80%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    height: 450px;
+    margin-top: 0;
+}
+
+#projectslist div {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    height: auto;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform .1s;
+    box-shadow: 0px 0px 72px -18px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0px 0px 72px -18px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 0px 72px -18px rgba(0,0,0,0.5);
+}
+
+#projectslist div:hover {
+    transform: scale(1.2);
+}
+
+.pname {
+    font-weight: 700;
+    text-align: center;
+    margin-top: 240px;
+    margin-bottom: 8px;
+}
+
+.pdesc {
+    text-align: center;
+    margin-top: 0;
+}
+
+#p1 {
+    background-image: url(../imgs/screen.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#p2 {
+    background-image: url(../imgs/screen.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#p3 {
+    background-image: url(../imgs/screen.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#contacts {
+    height: 90vh;
+    top: 400vh;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#contactslist {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+
+.contact {
+    background-color: #222;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.contact img {
+    width: 50%;
+    height: auto;
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    transition: transform .1s;
+}
+
+.contact img:hover {
+    transform: scale(1.2);
+}
+
+footer {
+    height: 10vh;
+    top: 490vh;
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: sticky;
+}
+
+footer p {
+    color: #fff;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(34, 34, 34, 0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.popup {
+    width: 50%;
+    max-width: 550px;
+    background-color: #fff;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.open-popup {
+    display: flex;
+}
+
+.popup h4 {
+    font-size: 28px;
+    justify-self: start;
+    margin-top: -20px;
+    margin-bottom: 3px;
+}
+
+.popup_text {
+    margin: 10px 25px 20px 25px;
+}
+
+.closer {
+    rotate: 45deg;
+    margin: 0;
+    user-select: none;
+    cursor: pointer;
+    justify-self: start;
+    align-self: end;
+    margin-top: 5px;
+    margin-right: 15px;
+    font-size: 24px;
+}
