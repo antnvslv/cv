@@ -38,35 +38,35 @@
         <section id="skills">
             <h2 class="sec_head_onwhite">Навыки</h2>
             <div id="skillslist">
-                <div id="html5" onclick="openPopup()">
+                <div onclick="openPopup(), openHTML()">
                     <img src="./imgs/html.png">
                     <p>HTML</p>
                 </div>
-                <div id="css3" onclick="openPopup()">
+                <div onclick="openPopup(), openCSS()">
                     <img src="./imgs/css.png">
                     <p>CSS</p>
                 </div>
-                <div id="js" onclick="openPopup()">
+                <div onclick="openPopup(), openJS()">
                     <img src="./imgs/js.png">
                     <p>JavaScript</p>
                 </div>
-                <div id="git" onclick="openPopup()">
+                <div onclick="openPopup(), openGit()">
                     <img src="./imgs/git.png">
                     <p>Git</p>
                 </div>
-                <div id="react" onclick="openPopup()">
+                <div onclick="openPopup(), openReact()">
                     <img src="./imgs/react.png">
                     <p>React</p>
                 </div>
-                <div id="redux" onclick="openPopup()">
+                <div onclick="openPopup(), openRedux()">
                     <img src="./imgs/redux.png">
                     <p>Redux</p>
                 </div>
-                <div id="ps" onclick="openPopup()">
+                <div onclick="openPopup(), openPs()">
                     <img src="./imgs/ps.png">
                     <p>Photoshop</p>
                 </div>
-                <div id="figma" onclick="openPopup()">
+                <div onclick="openPopup(), openFigma()">
                     <img src="./imgs/figma.png">
                     <p>Figma</p>
                 </div>
@@ -106,11 +106,11 @@
         <footer>
             <p>Антон Новоселов, 2023</p>
         </footer>
-        <div class="container" id="popup">
-            <div class="popup">
+        <div class="container" id="popup" onclick="closePopup()">
+            <div class="popup" id="popup_content" onclick="event.stopPropagation()">
                 <p class="closer" onclick="closePopup()">+</p>
-                <h4>Heading</h4>
-                <p class="popup_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo enim laborum placeat ducimus amet optio, consequuntur suscipit saepe provident sunt quas animi earum ipsam alias repudiandae molestias nesciunt eveniet aspernatur?</p>
+                <h4 id="popup_heading"></h4>
+                <p id="popup_text"></p>
             </div>
         </div>
         <script src="./styles/style.js"></script>
