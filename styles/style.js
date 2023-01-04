@@ -3,12 +3,34 @@ let body = document.querySelector('body');
 let popupHead = document.getElementById('popup_heading');
 let popupText = document.getElementById('popup_text');
 let header = document.getElementById('header');
+let projDesc = document.querySelectorAll('.pdesc');
+let navLinks = document.querySelectorAll('.menu_element');
+let footerText = document.querySelector('footer p');
+let date = new Date().getFullYear();
+let menuBtn = document.getElementById('menu_btn');
+
+window.addEventListener('scroll', e => {
+    let fromTop = window.scrollY;
+    navLinks.forEach(link => {
+        let section = document.querySelector(link.hash);
+        if (
+            section.offsetTop <= fromTop + 200 &&
+            section.offsetTop + section.offsetHeight > fromTop + 200
+          ) {
+            link.classList.add('header-active');
+          } else {
+            link.classList.remove('header-active');
+          }
+    });
+});
 
 function openPopup() {
     popup.classList.add('open-popup');
     body.style.overflow = 'hidden';
-    body.style.padding = '0 17px 0 0';
-    header.style.padding = '0 17px 0 0';
+    if (window.innerWidth > 480) {
+        body.style.padding = '0 17px 0 0';
+        header.style.padding = '0 17px 0 0';
+    }
 }
 
 function closePopup() {
@@ -50,10 +72,18 @@ function openRedux() {
 
 function openPs() {
     popupHead.innerHTML = 'Adobe Photoshop';
-    popupText.innerHTML = 'Начал пользоваться в 13 лет, учил на ходу. Сейчас отлично владею инструментом, делаю там большинство дизайн-концепций. Раньше делал там макеты, но потом перешел на Фигму.';
+    popupText.innerHTML = 'Начал пользоваться в 13 лет, учил на ходу. Сейчас отлично владею инструментом, делаю в нем большинство дизайнов. Раньше создавал там макеты, но потом перешел на Фигму.';
 }
 
 function openFigma() {
     popupHead.innerHTML = 'Figma';
     popupText.innerHTML = 'Впервые открыл в 2019 году, пользоваться стал в 2021-м. Сейчас делаю там макеты.';
 }
+
+footerText.innerHTML = `Антон Новоселов, ${date}`
+
+menuBtn.addEventListener('touchstart', () => {
+    navLinks.style.cssText = `
+    
+    `
+})

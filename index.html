@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <!--Возьмите на работу плз
-    Продам гараж
-    Здесь могла быть ваша реклама
-    Апельсины 50 рублей-->
+    <!--Апельсины 50 рублей-->
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,10 +10,15 @@
     </head>
     <body>
         <header id="header">
-            <a href="#iam" class="iam">Кто я</a>
-            <a href="#skills" class="skills">Навыки</a>
-            <a href="#projects" class="projects">Проекты</a>
-            <a href="#contacts" class="contacts">Контакты</a>
+            <div id="menu_btn">
+                <span id="top_frame"></span>
+                <span id="middle_frame"></span>
+                <span id="bottom_frame"></span>
+            </div>
+            <a href="#iam" class="iam menu_element">Кто я</a>
+            <a href="#skills" class="skills menu_element">Навыки</a>
+            <a href="#projects" class="projects menu_element">Проекты</a>
+            <a href="#contacts" class="contacts menu_element">Контакты</a>
             <a href="en.html" class="change_lang">EN<img src="./imgs/usa.png" draggable="false"></a>
         </header>
         <main>
@@ -75,15 +77,18 @@
         <section id="projects">
             <h2 class="sec_head_onblack">Проекты</h2>
             <div id="projectslist">
-                <div id="p1">
+                <div id="p1" onclick="projPopup()">
+                    <img src="./imgs/screen.png">
                     <p class="pname">Проект 1</p>
                     <p class="pdesc">Описание</p> 
                 </div>
-                <div id="p2">
+                <div id="p2" onclick="projPopup()">
+                    <img src="./imgs/screen.png">
                     <p class="pname">Проект 2</p>
                     <p class="pdesc">Описание</p>
                 </div>
-                <div id="p3">
+                <div id="p3" onclick="projPopup()">
+                    <img src="./imgs/screen.png">
                     <p class="pname">Проект 3</p>
                     <p class="pdesc">Описание</p>
                 </div>
@@ -93,18 +98,21 @@
             <h2 class="sec_head_onwhite">Контакты</h2>
             <div id="contactslist">
                 <div class="contact">
-                    <a href="https://t.me/antnvslv" target="_blank"><img src="./imgs/tg_white.png" draggable="false"></a>
+                    <a href="https://t.me/antnvslv" target="_blank"><span class="contact_form" id="tg"><img src="./imgs/tg_white.png"><p>Telegram</p></span></a>
+                    <p class="contact_name">@antnvslv</p>
                 </div>
                 <div class="contact">
-                    <a href="mailto:antnvslv@gmail.com" target="_blank"><img src="./imgs/email_white.png" draggable="false"></a>
+                    <a href="mailto:antnvslv@gmail.com" target="_blank"><span class="contact_form" id="email"><img src="./imgs/email_white.png"><p>Почта</p></span></a>
+                    <p class="contact_name">antnvslv@gmail.com</p>
                 </div>
                 <div class="contact">
-                    <a href="https://github.com/antnvslv" target="_blank"><img src="./imgs/gh_white.png" draggable="false"></a>
+                    <a href="https://github.com/antnvslv" target="_blank"><span class="contact_form" id="gh"><img src="./imgs/gh_white.png"><p>GitHub</p></span></a>
+                    <p class="contact_name">@antnvslv</p>
                 </div>
             </div>
         </section>
         <footer>
-            <p>Антон Новоселов, 2023</p>
+            <p></p>
         </footer>
         <div class="container" id="popup" onclick="closePopup()">
             <div class="popup" id="popup_content" onclick="event.stopPropagation()">
