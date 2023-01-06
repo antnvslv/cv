@@ -1,16 +1,13 @@
-let popup = document.getElementById('popup');
 let body = document.querySelector('body');
 let popupHead = document.getElementById('popup_heading');
 let popupText = document.getElementById('popup_text');
-let header = document.getElementById('header');
-let projDesc = document.querySelectorAll('.pdesc');
-let navLinks = document.querySelectorAll('.menu_element');
 let footerText = document.querySelector('footer p');
 let date = new Date().getFullYear();
 let menuBtn = document.getElementById('menu_btn');
 
 window.addEventListener('scroll', e => {
     let fromTop = window.scrollY;
+    let navLinks = document.querySelectorAll('.menu_element');
     navLinks.forEach(link => {
         let section = document.querySelector(link.hash);
         if (
@@ -25,6 +22,8 @@ window.addEventListener('scroll', e => {
 });
 
 function openPopup() {
+    let popup = document.getElementById('popup');
+    let header = document.getElementById('header');
     popup.classList.add('open-popup');
     body.style.overflow = 'hidden';
     if (window.innerWidth > 480) {
@@ -34,6 +33,8 @@ function openPopup() {
 }
 
 function closePopup() {
+    let popup = document.getElementById('popup');
+    let header = document.getElementById('header');
     popup.classList.remove('open-popup');
     body.style.overflow = 'visible';
     body.style.padding = '0';
@@ -81,9 +82,3 @@ function openFigma() {
 }
 
 footerText.innerHTML = `Антон Новоселов, ${date}`
-
-menuBtn.addEventListener('touchstart', () => {
-    navLinks.style.cssText = `
-    
-    `
-})

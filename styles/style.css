@@ -9,7 +9,8 @@ body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     color: #222;
-    position: relative;
+    position: absolute;
+    width: 100%;
 }
 
 a {
@@ -147,14 +148,14 @@ main {
 .about {
     justify-self: center;
     display: grid;
-    grid-template: repeat(2, minmax(100px, 200px)) / repeat(2, minmax(300px, 421px));
+    grid-template: repeat(2, minmax(100px, 30vh)) / repeat(2, minmax(300px, 40vw));
     grid-template-areas: 'first_cloud second_cloud'
     'third_cloud fourth_cloud';
-    gap: 10px 10px;
+    gap: 1vh;
 }
 
 #iam img {
-    width: 100px;
+    width: 8vw;
     z-index: 999;
     position: absolute;
     justify-self: center;
@@ -189,7 +190,7 @@ main {
 }
 
 .cloud_text {
-    font-size: 24px;
+    font-size: calc(16px + 1vw);
     margin: 40px;
 }
 
@@ -213,7 +214,7 @@ main {
     grid-template-columns: repeat(4, 1fr);
     grid-auto-flow: row dense;
     grid-gap: 20px;
-    height: 450px;
+    height: auto;
     margin-top: 0;
 }
 
@@ -225,7 +226,8 @@ main {
     justify-content: center;
     align-items: center;
     border-radius: 15px;
-    height: 170px;
+    font-size: calc(12px + 0.5vw);
+    height: 30vh;
     flex-direction: column;
 }
 
@@ -237,7 +239,7 @@ main {
 
 #skillslist div img {
     margin-top: 16px;
-    width: 100px;
+    width: calc(120px + 1vw + 1vh);
 }
 
 #projects {
@@ -255,7 +257,7 @@ main {
     width: 80%;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
-    height: 450px;
+    height: auto;
     margin-top: 0;
 }
 
@@ -264,9 +266,10 @@ main {
     display: flex;
     align-items: center;
     border-radius: 15px;
-    height: auto;
+    height: 65vh;
     flex-direction: column;
     overflow: hidden;
+    font-size: calc(12px + 0.5vw);
     transition: transform .1s;
     box-shadow: 0px 0px 72px -18px rgba(0,0,0,0.5);
     -webkit-box-shadow: 0px 0px 72px -18px rgba(0,0,0,0.5);
@@ -311,9 +314,11 @@ main {
 
 #contactslist {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 300px;
+    height: 60vh;
+    margin: 0 20px;
 }
 
 .contact {
@@ -324,6 +329,7 @@ main {
     border-radius: 15px;
     display: flex;
     flex-direction: column;
+    font-size: 16px;
 }
 
 .contact_form {
@@ -391,6 +397,10 @@ footer p {
     color: #fff;
 }
 
+footer .change_lang {
+    display: none;
+}
+
 .container {
     width: 100%;
     height: 100vh;
@@ -444,50 +454,141 @@ footer p {
     font-size: 24px;
 }
 
-@media (max-width: 890px) {
+@media (min-width: 2000px) {
+    .hello {
+        font-size: 240px;
+    }
+
+    .name {
+        font-size: 32px;
+    }
+
+    header {
+        height: 70px;
+        grid-template-columns: 3fr 280px 280px 280px 280px 2fr 1fr;
+    }
+
+    .menu_element {
+        font-size: 32px;
+    }
+
+    .change_lang {
+        font-size: 28px;
+    }
+
+    .change_lang img {
+        width: 50px;
+        margin-left: 10px;
+    }
+
+    .popup {
+        width: 50%;
+        max-width: 2000px;
+    }
     
+    #popup_heading {
+        font-size: 64px;
+        justify-self: start;
+        margin-top: -20px;
+        margin-bottom: 3px;
+    }
+    
+    #popup_text {
+        font-size: 32px;
+    }
+    
+    .closer {
+        font-size: 48px;
+    }
+    
+    .contact {
+        height: 150px;
+        width: 600px;
+        font-size: 24px;
+    }
+    
+    .contact_form {
+        height: 75px;
+    }
+
+    .contact_form img {
+        width: 50px;
+    }
+
+    footer p {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 1000px) {
+
+    #projects .sec_head_onblack {
+        margin: 10px 0 15px 0;
+    }
+
+    #projectslist {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        margin: 0;
+    }
+    
+    #projectslist div {
+        display: flex;
+        align-items: center;
+        border-radius: 15px;
+        width: 33vh;
+        height: 26vh;
+    }
+
+    .pdesc {
+        display: none;
+    }
 }
 
 @media (max-width: 480px) {
 
     header {
-        display: grid;
-        grid-template-columns: 1fr 3fr 1fr;
-        grid-template-areas: 'menu . change_lang';
-    }
-
-    #menu_btn {
-        justify-self: start;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 30px;
-        height: 30px;
-        margin-left: 20px;
-        grid-area: menu;
     }
 
-    #menu_btn span {
-        background-color: #eee;
-        width: 100%;
-        height: 3px;
-        margin-top: 5px;
-        border-radius: 5px;
+    .menu_element:hover {
+        background-color: #222;
     }
     
-    .menu_element {
-        display: none;
+    .iam {
+        width: 22%;
+    }
+
+    .skills {
+        width: 25%;
+    }
+
+    .projects {
+        width: 25%;
+    }
+
+    .contacts {
+        width: 28%;
     }
 
     .change_lang {
-        width: auto;
-        justify-self: end;
-        margin-right: 20px;
-        grid-area: change_lang;
+        display: none;
+    }
+
+    main {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .hello {
         font-size: 72px;
+        text-align: center;
         margin: 0;
         padding: 0;
         animation: ani 3s forwards;
@@ -533,6 +634,7 @@ footer p {
     #third_cloud,
     #fourth_cloud {
         margin: 0 40px;
+        height: 19vh;
     }
     
     .cloud_text {
@@ -546,12 +648,22 @@ footer p {
     }
     
     #skillslist {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 40vw);
         grid-gap: 10px;
+        align-items: center;
+        justify-content: center;
+        row-gap: 5vh;
+    }
+
+    #skillslist div {
+        height: 15vh;
+    }
+
+    #skillslist div img {
+        width: 15vw;
     }
     
     #projectslist {
-        margin-top: 30px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -562,8 +674,8 @@ footer p {
         display: flex;
         align-items: center;
         border-radius: 15px;
-        width: 250px;
-        height: auto;
+        width: 33vh;
+        height: 25vh;
     }
 
     .pdesc {
@@ -571,7 +683,7 @@ footer p {
     }
     
     #contactslist {
-        height: 600px;
+        height: 70vh;
         flex-direction: column;
         justify-content: center;
     }
@@ -582,5 +694,74 @@ footer p {
     
     .popup {
         width: 75%;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer p {
+        margin: 1vh 0 1vh 0;
+    }
+
+    footer .change_lang {
+        display: flex;
+        margin: 0 0 2vh 0;
+    }
+}
+
+@media (max-height: 500px) {
+    body {
+        position: absolute;
+        width: 100%;
+    }
+
+    .sec_head_onblack {
+        margin: 0;
+    }
+    
+    .sec_head_onwhite {
+        margin: 0;
+    }
+    
+    #skillslist div img {
+        width: calc(56px + 1vw + 1vh);
+    }
+    
+    #projectslist {
+        display: grid;
+        width: 80%;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+        height: auto;
+        margin-top: 7vh;
+    }
+    
+    #projectslist div {
+        height: 43vh;
+        width: 25vw;
+    }
+    
+    .contact {
+        height: 70px;
+        width: 300px;
+        margin: 5px;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 14px;
+    }
+    
+    .contact_form {
+        height: 35px;
+        justify-content: center;
+    }
+
+    .contact_form img {
+        width: 25px;
     }
 }
