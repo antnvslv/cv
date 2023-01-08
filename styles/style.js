@@ -1,3 +1,5 @@
+let popup = document.getElementById('popup');
+let header = document.getElementById('header');
 let body = document.querySelector('body');
 let popupHead = document.getElementById('popup_heading');
 let popupText = document.getElementById('popup_text');
@@ -22,8 +24,6 @@ window.addEventListener('scroll', e => {
 });
 
 function openPopup() {
-    let popup = document.getElementById('popup');
-    let header = document.getElementById('header');
     popup.classList.add('open-popup');
     body.style.overflow = 'hidden';
     if (window.innerWidth > 480) {
@@ -33,8 +33,6 @@ function openPopup() {
 }
 
 function closePopup() {
-    let popup = document.getElementById('popup');
-    let header = document.getElementById('header');
     popup.classList.remove('open-popup');
     body.style.overflow = 'visible';
     body.style.padding = '0';

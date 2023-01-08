@@ -10,7 +10,6 @@ body {
     margin: 0;
     color: #222;
     position: absolute;
-    width: 100%;
 }
 
 a {
@@ -521,6 +520,9 @@ footer .change_lang {
 }
 
 @media (max-width: 1000px) {
+    body {
+        width: 100%;
+    }
 
     #projects .sec_head_onblack {
         margin: 10px 0 15px 0;
