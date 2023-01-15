@@ -5,17 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
     <title>Четыре Дизайна</title>
 </head>
 <body>
     <section id="y2k">
         <div id="y2k_menu">
-            <span id="top_line"></span>
-            <span id="main_line">
-                <a href="#">Y2K</a>
-                <a href="#">Градиенты</a>
-                <a href="#">Мемфис</a>
-                <a href="#">Неоморфизм</a>
+            <a href="#gradients"><img src="./img/icon_gradients.png" draggable="false"></a>
+            <a href="#memphis"><img src="./img/icon_memphis.png" draggable="false"></a>
+            <a href="#neumorphism"><img src="./img/icon_neomorphism.png" draggable="false"></a>
         </div>
         <div id="main_info">
             <h1>Y2K Стиль</h1>
@@ -31,5 +31,45 @@
             <img src="./img/amiga.png" id="amiga" draggable="false">
         </div>
     </section>
+    <section id="gradients">
+        <img src="./img/gradients_header.svg" id="gheader" draggable="false">
+        <p>Сложные градиенты, несмотря на название, идеально сочетаются с минимализмом. Этот стиль придает дизайну динамичность для увеличения пользовательской вовлеченности. Градиенты как вошли в тренды в 80-х, так и не покидают их. Однако если раньше к градиентам относились как к фундаменту для скевоморфизма или как к уходу от минимализма, то сейчас сложные градиенты выруливают на новую непроторенную дорожку.</p>
+        <div id="gradients_menu">
+            <a href="#y2k"><img src="./img/icon_y2k.png" draggable="false"></a>
+            <a href="#memphis"><img src="./img/icon_memphis.png" draggable="false"></a>
+            <a href="#neumorphism"><img src="./img/icon_neomorphism.png" draggable="false"></a>
+        </div>
+    </section>
+    <section id="memphis">
+        <div id="memphis_header"><h1>Мемфис</h1></div>
+        <span id="linebg"></span>
+        <aside id="aleft">
+            <a href="#y2k"><img src="./img/icon_y2k.png" draggable="false"></a>
+            <a href="#gradients"><img src="./img/icon_gradients.png" draggable="false"></a>
+            <a href="#neumorphism"><img src="./img/icon_neomorphism.png" draggable="false"></a>
+        </aside>
+        <div id="memphis_content">
+            <h2>Италия, 80-е</h2>
+            <p>А конкретнее — 1981 год. Молодые дизайнеры во главе с Этторе Соттассом основывают группу Мемфис, которая работает над дизайном интерьера. Их фишкой становится яркий постмодернизм с элементами ар-деко и поп-арта. В те времна это было бунтарством даже на фоне пышных 70-х. Сейчас такой стиль перекочевал в веб-дизайн. Он сочетает в себе яркие цвета, плоский интерфейс, четкие линии и геометричность. </p>
+        </div>
+        <aside id="aright">
+            <img src="./img/tower.png" draggable="false">
+        </aside>
+    </section>
+    <section id="neumorphism">
+        <h1>Неоморфизм</h1>
+        <div id="ncontainer">
+            <p>А помните был такой скевоморфизм? Неоморфизм — по сути его перерождение, но с заменой вырвиглазного реализма умеренным футуризмом. Здесь начинается игра теней и внешних свечений. Задача дизайнера — сделать так, чтобы элементы не «лежали» на фоне и не «летали», а соприкасались с ним. Главное преимущество — возможность играться с тенями с учетом индивидуальности интерфейса. Из минусов — беды с доступностью — если не дожать или пережать контрастность, то всё будет выглядеть неинтуитивно.</p>
+        </div>
+        <div id="nnav">
+            <a href="#y2k"><img src="./img/neuicon_y2k.png" draggable="false"></a>
+            <a href="#gradients"><img src="./img/neuicon_gradients.png" draggable="false"></a>
+            <a href="#memphis"><img src="./img/neuicon_memphis.png" draggable="false"></a>
+        </div>
+    </section>
+    <footer>
+        <p></p>
+    </footer>
+    <script src="./index.js"></script>
 </body>
 </html>
